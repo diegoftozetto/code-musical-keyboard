@@ -1,0 +1,502 @@
+COD SEGMENT
+ASSUME CS:COD, DS:COD, ES:COD, SS:COD
+ORG 100h
+MAIN PROC NEAR
+
+;CONFIGUARA TELA
+MOV AX,03h
+MOV CX,2607h 
+INT 10h 
+
+MONTARTECLADO:
+;CONFIGURA COR DA LETRA
+MOV BL,07H
+
+;MONTA TECLADO NA TELA
+MONTATECLADOP:
+    CALL T2
+    CALL T3
+    CALL T5
+    CALL T6
+    CALL T7
+    CALL TS
+    CALL TD
+    CALL TG
+    CALL TH
+    CALL TJ
+MONTATECLADOB:
+    CALL TQ
+    CALL TW
+    CALL TE
+    CALL TR
+    CALL TT
+    CALL TY
+    CALL TU
+    CALL TZ
+    CALL TX
+    CALL TC
+    CALL TV
+    CALL TB
+    CALL TN
+    CALL TM
+    JMP INICIO
+    
+;TECLADO BRANCO
+TQ:MOV DL,5d
+    MOV DH,4d
+    MOV AH,02h
+    INT 10h
+    MOV AL,51h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TW:MOV DL,11d
+    MOV DH,4d
+    MOV AH,02h 
+    INT 10h
+    MOV AL,57h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TE:MOV DL,17d
+    MOV DH,4d
+    MOV AH,02h
+    MOV BH,00h 
+    INT 10h
+    MOV AL,45h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TR:MOV DL,20d
+    MOV DH,4d
+    MOV AH,02h
+    MOV BH,00h 
+    INT 10h
+    MOV AL,52h
+    MOV AH,09h
+    MOV CX,1h
+    INT 10h
+    RET
+TT:MOV DL,26d
+    MOV DH,4d
+    MOV AH,02h
+    MOV BH,00h 
+    INT 10h
+    MOV AL,54h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TY:
+    MOV DL,32d
+    MOV DH,4d
+    MOV AH,02h
+    INT 10h
+    MOV AL,59h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TU:MOV DL,38d
+    MOV DH,4d
+    MOV AH,02h
+    INT 10h
+    MOV AL,55h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TZ:MOV DL,41d
+    MOV DH,4d
+    MOV AH,02h
+    INT 10h
+    MOV AL,5Ah
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET   
+TX:MOV DL,47d
+    MOV DH,4d
+    MOV AH,02h
+    INT 10h
+    MOV AL,58h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET   
+TC:MOV DL,53d
+    MOV DH,4d
+    MOV AH,02h
+    INT 10h
+    MOV AL,43h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET 
+TV:MOV DL,56d
+    MOV DH,4d
+    MOV AH,02h
+    INT 10h
+    MOV AL,56h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET 
+TB:MOV DL,62d
+    MOV DH,4d
+    MOV AH,02h
+    INT 10h
+    MOV AL,42h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET  
+TN:MOV DL,68d
+    MOV DH,4d
+    MOV AH,02h
+    INT 10h
+    MOV AL,4Eh
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET  
+TM:MOV DL,74d
+    MOV DH,4d
+    MOV AH,02h
+    INT 10h
+    MOV AL,4Dh
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET     
+    
+;TECLADO PRETO
+T2:MOV DL,8d
+    MOV DH,2d
+    MOV AH,02h
+    INT 10h
+    MOV AL,32h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+T3:MOV DL,14d
+    MOV DH,2d
+    MOV AH,02h
+    INT 10h
+    MOV AL,33h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+T5:MOV DL,23d
+    MOV DH,2d
+    MOV AH,02h
+    INT 10h
+    MOV AL,35h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+T6:MOV DL,29d
+    MOV DH,2d
+    MOV AH,02h
+    INT 10h
+    MOV AL,36h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+T7:MOV DL,35d
+    MOV DH,2d
+    MOV AH,02h
+    INT 10h
+    MOV AL,37h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TS:MOV DL,44d
+    MOV DH,2d
+    MOV AH,02h
+    INT 10h
+    MOV AL,53h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TD:MOV DL,50d
+    MOV DH,2d
+    MOV AH,02h
+    INT 10h
+    MOV AL,44h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TG:MOV DL,59d
+    MOV DH,2d
+    MOV AH,02h
+    INT 10h
+    MOV AL,47h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TH:MOV DL,65d
+    MOV DH,2d
+    MOV AH,02h
+    INT 10h
+    MOV AL,48h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+TJ:MOV DL,71d
+    MOV DH,2d
+    MOV AH,02h
+    INT 10h
+    MOV AL,4Ah
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    RET
+
+INICIO:MOV DL,35d
+    MOV DH,10d
+    MOV AH,02h
+    INT 10h
+    MOV AL,00h
+    MOV AH,09h
+    MOV CX,1h 
+    INT 10h
+    MOV DL,00h 
+    MOV AH,02h
+    INT 21h
+    MOV AH,08h
+    INT 21h
+    JMP TECLAB
+    JMP INICIO   
+
+;VERIFICA TECLA
+TECLAB:
+    MOV COLUNA,4d
+    MOV DL,71h
+    CMP DL,AL
+    JZ TCQ
+    MOV DL,77h
+    CMP DL,AL
+    JZ TCW
+    MOV DL,65h
+    CMP DL,AL
+    JZ TCE 
+    MOV DL,72h
+    CMP DL,AL
+    JZ TCR 
+    MOV DL,74h
+    CMP DL,AL
+    JZ TCT
+    MOV DL,79h
+    CMP DL,AL
+    JZ TCY
+    MOV DL,75h
+    CMP DL,AL
+    JZ TCU
+JMP TECLAB1   
+
+TCQ:MOV LINHA,5d
+    MOV AX,9121
+    JMP TOCAR
+TCW:MOV LINHA,11d
+    MOV AX,8126
+    JMP TOCAR
+TCE:MOV LINHA,17d
+    MOV AX,7239
+    JMP TOCAR  
+TCR:MOV LINHA,20d
+    MOV AX,6833
+    JMP TOCAR
+TCT:MOV LINHA,26d 
+    MOV AX,6087
+    JMP TOCAR
+TCY:MOV LINHA,32d 
+    MOV AX,5423
+    JMP TOCAR 
+TCU:MOV LINHA,38d 
+    MOV AX,4831
+    JMP TOCAR  
+TCZ:MOV LINHA,41d 
+    MOV AX,4560
+    JMP TOCAR
+TCX:MOV LINHA,47d 
+    MOV AX,4063
+    JMP TOCAR 
+ 
+TECLAB1:
+MOV DL,7Ah
+    CMP DL,AL
+    JZ TCZ
+    MOV DL,78h
+    CMP DL,AL
+    JZ TCX
+    MOV DL,63h
+    CMP DL,AL
+    JZ TCC
+    MOV DL,76h
+    CMP DL,AL
+    JZ TCV
+    MOV DL,62h
+    CMP DL,AL
+    JZ TCB
+    MOV DL,6Eh
+    CMP DL,AL
+    JZ TCN
+    MOV DL,6Dh
+    CMP DL,AL
+    JZ TCM
+    MOV COLUNA,2d
+JMP TECLAP   
+
+TCC:MOV LINHA,53d 
+    MOV AX,3619
+    JMP TOCAR
+TCV:MOV LINHA,56d 
+    MOV AX,3416
+    JMP TOCAR
+TCB:MOV LINHA,62d 
+    MOV AX,3043
+    JMP TOCAR
+TCN:MOV LINHA,68d 
+    MOV AX,2711
+    JMP TOCAR
+TCM:MOV LINHA,74d 
+    MOV AX,2415
+    JMP TOCAR
+
+IMPRIMIR:MOV DL,LINHA
+    MOV DH,COLUNA
+    MOV AH,02h
+    INT 10h
+    MOV AL,NOTA
+    MOV AH,09h ;
+    MOV CX,1h 
+    INT 10h
+    RET
+
+NR:
+MOV DL,30h
+    CMP DL,NOTA
+    JBE NMR  
+    JMP NNMR
+    
+TC MACRO
+    PUSH AX
+    MOV NOTA,DL
+    MOV AH,02h
+    INT 21h
+    MOV DL,39h     
+    CMP DL,NOTA 
+    JAE NR 
+NNMR:
+    SUB NOTA,20h
+NMR:
+    MOV BL,0Ch 
+    CALL IMPRIMIR
+    POP AX
+    MOV AL, 182 
+    OUT 43h, AL 
+    OUT 42h, AL 
+    MOV AL, AH
+    OUT 42h, AL 
+    IN AL, 61h
+    OR AL, 00000011b 
+    OUT 61h, AL 
+    MOV BX, 5h
+DURA:
+    MOV CX, 0FFFFh
+DURAC:
+    DEC CX
+    JNE DURAC
+    DEC BX
+    JNE DURA
+    IN AL, 61h 
+    AND AL, 11111100b 
+    OUT 61h, AL 
+    MOV BL,07H 
+    CALL IMPRIMIR  
+    JMP INICIO    
+ENDM
+   
+TECLAP:
+    MOV DL,32h
+    CMP DL,AL
+    JZ TC2
+    MOV DL,33h
+    CMP DL,AL
+    JZ TC3
+    MOV DL,35h
+    CMP DL,AL
+    JZ TC5
+    MOV DL,36h
+    CMP DL,AL
+    JZ TC6
+    MOV DL,37h
+    CMP DL,AL
+    JZ TC7
+    MOV DL,73h
+    CMP DL,AL
+    JZ TCS
+    MOV DL,64h
+    CMP DL,AL
+    JZ TCD
+    MOV DL,67h
+    CMP DL,AL
+    JZ TCG
+    MOV DL,68h
+    CMP DL,AL
+    JZ TCH
+    MOV DL,6Ah
+    CMP DL,AL
+    JZ TCJ
+JMP INICIO 
+
+TC2:MOV AX,8609
+MOV LINHA,8d 
+    JMP TOCAR
+TC3:MOV AX,7670
+MOV LINHA,14d 
+    JMP TOCAR
+    TC5:MOV AX,6449
+    MOV LINHA,23d 
+    JMP TOCAR
+    TC6:MOV AX,5746
+    MOV LINHA,29d 
+    JMP TOCAR
+    TC7:MOV AX,5119
+    MOV LINHA,35d 
+    JMP TOCAR
+    TCS:MOV AX,4304
+    MOV LINHA,44d 
+    JMP TOCAR
+    TCD:MOV AX,3834
+    MOV LINHA,50d 
+    JMP TOCAR
+    TCG:MOV AX,3224
+    MOV LINHA,59d 
+    JMP TOCAR
+    TCH:MOV AX,2873
+    MOV LINHA,65d 
+    JMP TOCAR
+    TCJ:MOV AX,2559
+    MOV LINHA,71d 
+    JMP TOCAR
+    
+MAIN ENDP 
+NOTA DB 0
+LINHA DB 0
+COLUNA DB 0
+COD ENDS 
+END MAIN 
